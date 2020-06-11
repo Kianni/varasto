@@ -10,22 +10,24 @@
   </div>
 @endif
  
-<form action="/posts/edit" method="POST">
+ <!-- /posts/edit -->
+<form action="/posts/{{ $post->id }}" method="POST">
   {{ csrf_field() }}
-  <div class="form-group">
+ 
+  <!-- <div class="form-group">
     <label for="id">ID:</label>
-    <input type="text" class="form-control" placeholder="{{ $post['id'] }}" value="{{ $post['id'] }}" name="id" id="id">
-    <input type="hidden" name="placeNumberInArray" value="{{ $postId }}">
-  </div>
+    <input type="text" class="form-control" placeholder=" $post['id'] " value=" $post['id'] " name="id" id="id">
+    <input type="hidden" name="placeNumberInArray" value=" $postId ">
+  </div> -->
   <div class="form-group">
     <label for="title">Nimi:</label>
-    <input type="text" class="form-control" placeholder="{{ $post['title'] }}" value="{{ $post['title'] }}" name="title" id="title">
+    <input type="text" class="form-control" placeholder="{{ $post->name }}" value="{{ $post->name }}" name="name" id="title">
   </div>
   <div class="form-group">
     <label for="desc">Kuvaus:</label>
-    <input type="text" class="form-control" placeholder="{{$post['content']}}" value="{{$post['content']}}" name="content" id="desc">
+    <input type="text" class="form-control" placeholder="{{$post->content}}" value="{{$post->content}}" name="content" id="desc">
   </div>
-  
+  <input type="hidden" name="_method" value="PUT">
   <button type="submit" class="btn btn-primary">Lähetä</button>
 </form>
 @endsection

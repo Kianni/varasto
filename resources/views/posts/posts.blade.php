@@ -19,11 +19,15 @@
      @foreach($posts as $post)
 
       <tr>
-        <td>{{ $post['id'] }}</td>
-        <td><a href="posts/post/{{array_search($post,$posts)}}">{{ $post['title'] }}<a/></td>
-        <td>{{ $post['content'] }}</td>
+        <!--до изменений из-за ДБ было так-->
+        <td>{{ $post->id }}</td>
+        
+        <!--array_search($post,$posts)-->
+        <td><a href="/posts/{{ $post->id }}">{{ $post->name }}<a/></td>
+        
+        <td>{{ $post->content }}</td>
         <!--<td>{{ json_encode($post) }}</td>-->
-        <td><a href="posts/edit/{{array_search($post,$posts)}}">Edit</a></td>
+        <td><a href="/posts/{{ $post->id }}/edit">Edit</a></td>
       </tr>
     @endforeach
           

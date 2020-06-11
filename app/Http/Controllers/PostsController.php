@@ -5,7 +5,6 @@ use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Session\Store;
 
-
 class PostsController extends Controller
 {
     public function showAllPosts(Store $session)

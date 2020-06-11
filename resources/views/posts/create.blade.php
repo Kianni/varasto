@@ -10,15 +10,16 @@
   </div>
 @endif
  
-<form action="/posts/create" method="POST">
+<form action="/posts" method="POST">
   {{ csrf_field() }}
-  <div class="form-group">
+  
+  <!-- <div class="form-group">
     <label for="id">ID:</label>
     <input type="text" class="form-control" placeholder="anna tuotteen id" name="id" id="id">
-  </div>
+  </div> -->
   <div class="form-group">
     <label for="title">Nimi:</label>
-    <input type="text" class="form-control" placeholder="anna tuotteen nimi" name="title" id="title">
+    <input type="text" class="form-control" placeholder="anna tuotteen nimi" name="name" id="title">
   </div>
   <div class="form-group">
     <label for="desc">Kuvaus:</label>

@@ -31,14 +31,13 @@ Route::get('/x', function () {
 });
 
 
-Route::prefix('posts')->group( function() {
-    Route::get('', 'PostsController@showAllPosts');
-    Route::get('/create', 'PostsController@create');
-    Route::post('/create', 'PostsController@addPost');
-    Route::get('/post/{id}', 'PostsController@getPost');
-    Route::get('/edit/{keyNumber?}', 'PostsController@changePost');
-    Route::post('/edit', 'PostsController@updatePost');
+// Route::prefix('posts')->group( function() {
+//     Route::get('', 'PostsController@showAllPosts');
+//     Route::get('/create', 'PostsController@create');
+//     Route::post('/create', 'PostsController@addPost');
+//     Route::get('/post/{id}', 'PostsController@getPost');
+//     Route::get('/edit/{keyNumber?}', 'PostsController@changePost');
+//     Route::post('/edit', 'PostsController@updatePost');  
+//});
 
-    
-});
-
+Route::resource('posts','ItemsController');
