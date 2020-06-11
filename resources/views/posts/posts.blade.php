@@ -25,17 +25,18 @@
         
         <!--array_search($post,$posts)-->
         <td><a href="/posts/{{ $post->id }}">{{ $post->name }}<a/></td>
-        
         <td>{{ $post->content }}</td>
         <td>{{ $post->amount }}</td>
         <!--<td>{{ json_encode($post) }}</td>-->
         <td><a href="/posts/{{ $post->id }}/edit">Edit</a></td>
       </tr>
+      <!-- <small>Lisätty  $post->created_at, $post->user->name</small> -->
+
     @endforeach
           
     </tbody>
   </table>
-  <a href='/posts/create'><button type="button" class="btn btn-secondary">Lisää tavara</button></a>
+  <a href='/posts/create'><button type="button" class="btn btn-info">Lisää tavara</button></a>
   
 </div>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ItemsController extends Controller
 {
@@ -14,6 +15,8 @@ class ItemsController extends Controller
     public function index()
     {
         $items = Item::all();
+        //Session::put('key',"Let's learn Laravel");
+        Session::flush();
         return view('posts.posts')->with('posts',$items);
     }
 
@@ -42,6 +45,8 @@ class ItemsController extends Controller
         ]);
 
         $item = new Item();
+        //next is added
+        $item->user_id = auth()->user()->id;
         $item->name = $request->input('name');
         $item->content = $request->input('content');
         $item->amount = $request->input('amount');
@@ -60,7 +65,8 @@ class ItemsController extends Controller
     public function show($id)
     {
         $item = Item::find($id);
-        return view('posts.post')->with('post',$item);
+        $sess_key = Session::get('key');
+        return view('posts.post')->with(['post'=>$item, 'sess_key'=>$sess_key]);
     }
 
     /**

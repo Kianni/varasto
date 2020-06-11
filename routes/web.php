@@ -41,3 +41,6 @@ Route::get('/x', function () {
 //});
 
 Route::resource('posts','ItemsController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

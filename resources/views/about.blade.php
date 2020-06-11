@@ -9,6 +9,7 @@
  <!-- <li>id</li> -->
  <li>nimen </li>
  <li>kuvauksen </li>
+ <li>määrän</li>
  </ul>
  <p>ja muokata näitä tietoja jälkikäteen!</p>
 
