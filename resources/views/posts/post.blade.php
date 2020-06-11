@@ -10,6 +10,7 @@
         <!--<th>ID</th>-->
         <th>Nimi</th>
         <th>Kuvaus</th>
+        <th>Määrä</th>
         <th>Muokkaa</th>
 
       </tr>
@@ -19,6 +20,7 @@
         <!--<td> $post['id'] </td>-->
         <td>{{ $post->name }}</td>
         <td>{{ $post->content }}</td>
+        <td>{{ $post->amount }}</td>
         <!--array_search($post,$posts)-->
         <td><a href="/posts/{{ $post->id }}/edit">Edit</a></td>
       </tr>

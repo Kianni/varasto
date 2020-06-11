@@ -25,6 +25,10 @@
     <label for="desc">Kuvaus:</label>
     <input type="text" class="form-control" placeholder="anna tuotteen kuvaus" name="content" id="desc">
   </div>
+  <div class="form-group">
+    <label for="amount">Määrä:</label>
+    <input type="text" class="form-control" placeholder="kuinka paljon" name="amount" id="amount">
+  </div>
   
   <button type="submit" class="btn btn-primary">Lähetä</button>
 </form>

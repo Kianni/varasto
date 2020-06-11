@@ -10,6 +10,7 @@
         <th>ID</th>
         <th>Nimi</th>
         <th>Kuvaus</th>
+        <th>Määrä</th>
         <!--<th>JSON</th>-->
         <th>Muokkaa</th>
 
@@ -26,6 +27,7 @@
         <td><a href="/posts/{{ $post->id }}">{{ $post->name }}<a/></td>
         
         <td>{{ $post->content }}</td>
+        <td>{{ $post->amount }}</td>
         <!--<td>{{ json_encode($post) }}</td>-->
         <td><a href="/posts/{{ $post->id }}/edit">Edit</a></td>
       </tr>

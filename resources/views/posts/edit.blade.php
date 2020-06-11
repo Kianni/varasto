@@ -27,6 +27,10 @@
     <label for="desc">Kuvaus:</label>
     <input type="text" class="form-control" placeholder="{{$post->content}}" value="{{$post->content}}" name="content" id="desc">
   </div>
+  <div class="form-group">
+    <label for="amount">Kuvaus:</label>
+    <input type="text" class="form-control" placeholder="{{$post->amount}}" value="{{$post->amount}}" name="amount" id="amount">
+  </div>
   <input type="hidden" name="_method" value="PUT">
   <button type="submit" class="btn btn-primary">Lähetä</button>
 </form>

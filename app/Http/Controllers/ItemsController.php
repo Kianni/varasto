@@ -37,12 +37,15 @@ class ItemsController extends Controller
     {
         $this->validate($request,[
             'name' => 'required|min:5',
-            'content' => 'required'
+            'content' => 'required',
+            'amount' => 'required'
         ]);
 
         $item = new Item();
         $item->name = $request->input('name');
         $item->content = $request->input('content');
+        $item->amount = $request->input('amount');
+
         $item->save();
 
         return redirect('/posts');
@@ -83,12 +86,16 @@ class ItemsController extends Controller
     {
         $this->validate($request,[
             'name' => 'required|min:5',
-            'content' => 'required'
+            'content' => 'required',
+            'amount' => 'required'
+
         ]);
 
         $item = Item::find($id);
         $item->name = $request->input('name');
         $item->content = $request->input('content');
+        $item->amount = $request->input('amount');
+
         $item->save();
         
         // $items = Item::all();
