@@ -16,7 +16,7 @@ class ItemsController extends Controller
     {
         $items = Item::all();
         //Session::put('key',"Let's learn Laravel");
-        Session::flush();
+        //Session::flush();
         return view('posts.posts')->with('posts',$items);
     }
 
