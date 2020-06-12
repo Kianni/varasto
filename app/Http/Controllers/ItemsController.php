@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Session;
 
 class ItemsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>['index','show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -78,6 +82,12 @@ class ItemsController extends Controller
     public function edit($id)
     {
         $item = Item::find($id);
+        // это не будет использоваться никогда
+        // потому что исключена возможность этого действия на уровне анкеты
+        // not editable for you
+        if(auth()->user()->id !== $item->user_id){
+            return redirect('/posts');
+        }
         return view('posts.edit')->with('post',$item);
     }
 
@@ -118,6 +128,12 @@ class ItemsController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
+        // это не будет использоваться никогда
+        // потому что исключена возможность этого действия на уровне анкеты
+        // not editable for you
+        if(auth()->user()->id !== $item->user_id){
+            return redirect('/posts');
+        }
         $item->delete();
 
         return redirect('/posts');

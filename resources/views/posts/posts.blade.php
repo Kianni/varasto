@@ -28,7 +28,14 @@
         <td>{{ $post->content }}</td>
         <td>{{ $post->amount }}</td>
         <!--<td>{{ json_encode($post) }}</td>-->
+        @if(!Auth::guest())
+        @if(Auth::user()->id == $post->user_id)
         <td><a href="/posts/{{ $post->id }}/edit">Edit</a></td>
+        @else
+        <td>not editable for you</td>
+        @endif
+        @endif
+
       </tr>
       <!-- <small>Lisätty  $post->created_at, $post->user->name</small> -->
 
